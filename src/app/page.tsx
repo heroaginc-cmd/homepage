@@ -18,7 +18,7 @@ export default function HomePage() {
           最先端のマーケティング支援から泥臭い販売動線設計まで一括で支援。
         </p>
         <div>
-          <a href="https://lin.ee/XXXXXXX" target="_blank" rel="noopener noreferrer">
+          <a href="https://lin.ee/vBEfQwi" target="_blank" rel="noopener noreferrer">
             まず相談してみる（LINE）
           </a>
           <Link href="/drama-generator">
@@ -58,7 +58,7 @@ export default function HomePage() {
       <section>
         <h2>まず、話してみませんか。</h2>
         <p>課題やアイデアをお気軽にLINEでご相談ください。初回相談は無料です。</p>
-        <a href="https://lin.ee/XXXXXXX" target="_blank" rel="noopener noreferrer">
+        <a href="https://lin.ee/vBEfQwi" target="_blank" rel="noopener noreferrer">
           LINEで相談する
         </a>
       </section>
