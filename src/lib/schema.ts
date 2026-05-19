@@ -1,6 +1,6 @@
-import type { Organization, WebSite, WithContext } from "schema-dts"
+import type { WebSite, WithContext } from "schema-dts"
 
-export const organizationSchema: WithContext<Organization> = {
+export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "HERO株式会社",
@@ -8,8 +8,8 @@ export const organizationSchema: WithContext<Organization> = {
   logo: "https://hero-corp.jp/logo.png",
   description:
     "AIショートドラマ制作・マーケティングコンサル・映像制作・AI支援を提供。B2B・B2C問わず、映像とAIでブランド課題を解決します。",
-  foundingLocation: {
-    "@type": "Place",
+  address: {
+    "@type": "PostalAddress",
     addressCountry: "JP",
     addressLocality: "東京都",
   },
@@ -28,11 +28,4 @@ export const webSiteSchema: WithContext<WebSite> = {
   "@type": "WebSite",
   name: "HERO株式会社",
   url: "https://hero-corp.jp",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: "https://hero-corp.jp/blog?q={search_term_string}",
-    },
-  },
 }
