@@ -1,65 +1,67 @@
-import Image from "next/image";
+import type { Metadata } from "next"
+import { pageMeta } from "@/lib/seo"
+import Link from "next/link"
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: pageMeta.home.title,
+  description: pageMeta.home.description,
+}
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+    <main>
+      {/* ヒーローセクション */}
+      <section>
+        <h1>AI×メディアで、事業を次のステージへ。</h1>
+        <p>
+          ビデオポッドキャスト、ショートドラマ、AIを活用したSNS運用支援など
+          最先端のマーケティング支援から泥臭い販売動線設計まで一括で支援。
+        </p>
+        <div>
+          <a href="https://lin.ee/XXXXXXX" target="_blank" rel="noopener noreferrer">
+            まず相談してみる（LINE）
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          <Link href="/drama-generator">
+            AI台本生成を無料体験
+          </Link>
         </div>
-      </main>
-    </div>
-  );
+      </section>
+
+      {/* サービス概要 */}
+      <section>
+        <h2>サービス</h2>
+        <div>
+          <div>
+            <h3>ショートドラマ制作</h3>
+            <p>AIを活用したブランデッドショートドラマの企画・脚本・制作。SNSで届くコンテンツを量産します。</p>
+            <Link href="/services">詳しく見る</Link>
+          </div>
+          <div>
+            <h3>マーケティングコンサル</h3>
+            <p>SNS戦略・オウンドメディア設計・販売動線の構築まで。戦略から実行まで一気通貫で伴走します。</p>
+            <Link href="/services">詳しく見る</Link>
+          </div>
+          <div>
+            <h3>映像制作</h3>
+            <p>ビデオポッドキャスト・商品紹介・インタビュー映像など、目的に応じた映像を制作します。</p>
+            <Link href="/services">詳しく見る</Link>
+          </div>
+          <div>
+            <h3>AI支援</h3>
+            <p>AI台本生成・コンテンツ自動化・業務効率化など、AIを使った仕組みづくりを支援します。</p>
+            <Link href="/drama-generator">無料体験する</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section>
+        <h2>まず、話してみませんか。</h2>
+        <p>課題やアイデアをお気軽にLINEでご相談ください。初回相談は無料です。</p>
+        <a href="https://lin.ee/XXXXXXX" target="_blank" rel="noopener noreferrer">
+          LINEで相談する
+        </a>
+      </section>
+    </main>
+  )
 }
