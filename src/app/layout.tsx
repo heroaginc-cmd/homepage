@@ -3,6 +3,8 @@ import { Geist } from "next/font/google"
 import "./globals.css"
 import { siteConfig } from "@/lib/seo"
 import { organizationSchema, webSiteSchema } from "@/lib/schema"
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
 
 const geist = Geist({ subsets: ["latin"] })
 
@@ -54,7 +56,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={geist.className}>{children}</body>
+      <body className={geist.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
