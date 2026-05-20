@@ -1,23 +1,74 @@
+"use client"
+
 import Link from "next/link"
+import { useState } from "react"
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <header>
-      <nav>
-        <Link href="/">
-          HERO株式会社
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#E5E5E5]">
+      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
+        {/* ロゴ */}
+        <Link href="/" className="font-bold text-xl tracking-widest text-[#1A1A1A]">
+          HERO
         </Link>
-        <ul>
-          <li><Link href="/about">会社概要</Link></li>
-          <li><Link href="/services">サービス</Link></li>
-          <li><Link href="/works">実績</Link></li>
-          <li><Link href="/blog">ブログ</Link></li>
-          <li><Link href="/contact">お問い合わせ</Link></li>
+
+        {/* PCナビ */}
+        <ul className="hidden md:flex items-center gap-8">
+          <li><Link href="/about" className="text-sm text-[#6B6B6B] hover:text-[#F18E24] transition-colors">会社概要</Link></li>
+          <li><Link href="/services" className="text-sm text-[#6B6B6B] hover:text-[#F18E24] transition-colors">サービス</Link></li>
+          <li><Link href="/works" className="text-sm text-[#6B6B6B] hover:text-[#F18E24] transition-colors">実績</Link></li>
+          <li><Link href="/blog" className="text-sm text-[#6B6B6B] hover:text-[#F18E24] transition-colors">ブログ</Link></li>
         </ul>
-        <a href="https://lin.ee/vBEfQwi" target="_blank" rel="noopener noreferrer">
-          LINEで相談する
-        </a>
+
+        {/* CTAボタン */}
+        <div className="hidden md:flex items-center gap-4">
+          
+            href="https://lin.ee/vBEfQwi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#F18E24] text-white text-sm px-5 py-2 hover:bg-[#D4780F] transition-colors"
+          >
+            LINEで相談する
+          </a>
+        </div>
+
+        {/* ハンバーガーメニュー（スマホ） */}
+        <button
+          className="md:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="メニュー"
+        >
+          <div className={`w-6 h-0.5 bg-[#1A1A1A] transition-all ${isOpen ? "rotate-45 translate-y-1.5" : ""}`} />
+          <div className={`w-6 h-0.5 bg-[#1A1A1A] my-1.5 transition-all ${isOpen ? "opacity-0" : ""}`} />
+          <div className={`w-6 h-0.5 bg-[#1A1A1A] transition-all ${isOpen ? "-rotate-45 -translate-y-1.5" : ""}`} />
+        </button>
       </nav>
+
+      {/* スマホメニュー */}
+      {isOpen && (
+        <div className="md:hidden bg-white border-t border-[#E5E5E5] px-6 py-4">
+          <ul className="flex flex-col gap-4">
+            <li><Link href="/about" className="text-sm text-[#6B6B6B]" onClick={() => setIsOpen(false)}>会社概要</Link></li>
+            <li><Link href="/services" className="text-sm text-[#6B6B6B]" onClick={() => setIsOpen(false)}>サービス</Link></li>
+            <li><Link href="/works" className="text-sm text-[#6B6B6B]" onClick={() => setIsOpen(false)}>実績</Link></li>
+            <li><Link href="/blog" className="text-sm text-[#6B6B6B]" onClick={() => setIsOpen(false)}>ブログ</Link></li>
+            <li>
+              
+                href="https://lin.ee/vBEfQwi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-[#F18E24] text-white text-sm px-5 py-2 text-center"
+                onClick={() => setIsOpen(false)}
+              >
+                LINEで相談する
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   )
 }

@@ -2,44 +2,63 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer>
-      <div>
-        <div>
-          <p>HERO株式会社</p>
-          <p>AI×メディアで、事業を次のステージへ。</p>
+    <footer className="bg-[#1A1A1A] text-white mt-24">
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+
+          {/* ブランド */}
+          <div className="md:col-span-1">
+            <p className="text-xl font-bold tracking-widest text-[#F18E24] mb-4">HERO</p>
+            <p className="text-sm text-[#A3A3A3] leading-relaxed">
+              AI×メディアで、<br />
+              事業を次のステージへ。
+            </p>
+          </div>
+
+          {/* サービス */}
+          <div>
+            <p className="text-xs tracking-widest text-[#F18E24] mb-4 uppercase">Services</p>
+            <ul className="flex flex-col gap-3">
+              <li><Link href="/services" className="text-sm text-[#A3A3A3] hover:text-white transition-colors">ショートドラマ制作</Link></li>
+              <li><Link href="/services" className="text-sm text-[#A3A3A3] hover:text-white transition-colors">マーケティングコンサル</Link></li>
+              <li><Link href="/services" className="text-sm text-[#A3A3A3] hover:text-white transition-colors">映像制作</Link></li>
+              <li><Link href="/drama-generator" className="text-sm text-[#A3A3A3] hover:text-white transition-colors">AI台本生成</Link></li>
+            </ul>
+          </div>
+
+          {/* 会社情報 */}
+          <div>
+            <p className="text-xs tracking-widest text-[#F18E24] mb-4 uppercase">Company</p>
+            <ul className="flex flex-col gap-3">
+              <li><Link href="/about" className="text-sm text-[#A3A3A3] hover:text-white transition-colors">会社概要</Link></li>
+              <li><Link href="/works" className="text-sm text-[#A3A3A3] hover:text-white transition-colors">実績・事例</Link></li>
+              <li><Link href="/blog" className="text-sm text-[#A3A3A3] hover:text-white transition-colors">ブログ</Link></li>
+              <li><Link href="/contact" className="text-sm text-[#A3A3A3] hover:text-white transition-colors">お問い合わせ</Link></li>
+            </ul>
+          </div>
+
+          {/* 法的情報 */}
+          <div>
+            <p className="text-xs tracking-widest text-[#F18E24] mb-4 uppercase">Legal</p>
+            <ul className="flex flex-col gap-3">
+              <li><Link href="/privacy" className="text-sm text-[#A3A3A3] hover:text-white transition-colors">プライバシーポリシー</Link></li>
+              <li><Link href="/tokusho" className="text-sm text-[#A3A3A3] hover:text-white transition-colors">特定商取引法</Link></li>
+            </ul>
+          </div>
         </div>
 
-        <div>
-          <p>サービス</p>
-          <ul>
-            <li><Link href="/services">ショートドラマ制作</Link></li>
-            <li><Link href="/services">マーケティングコンサル</Link></li>
-            <li><Link href="/services">映像制作</Link></li>
-            <li><Link href="/drama-generator">AI台本生成</Link></li>
-          </ul>
+        {/* コピーライト */}
+        <div className="border-t border-[#404040] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-[#6B6B6B]">© {new Date().getFullYear()} HERO株式会社. All rights reserved.</p>
+          
+            href="https://lin.ee/vBEfQwi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-[#F18E24] hover:text-[#FFA94D] transition-colors"
+          >
+            LINEで相談する →
+          </a>
         </div>
-
-        <div>
-          <p>会社情報</p>
-          <ul>
-            <li><Link href="/about">会社概要</Link></li>
-            <li><Link href="/works">実績・事例</Link></li>
-            <li><Link href="/blog">ブログ</Link></li>
-            <li><Link href="/contact">お問い合わせ</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <p>法的情報</p>
-          <ul>
-            <li><Link href="/privacy">プライバシーポリシー</Link></li>
-            <li><Link href="/tokusho">特定商取引法</Link></li>
-          </ul>
-        </div>
-      </div>
-
-      <div>
-        <p>© {new Date().getFullYear()} HERO株式会社. All rights reserved.</p>
       </div>
     </footer>
   )
