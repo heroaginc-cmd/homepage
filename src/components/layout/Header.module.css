@@ -1,0 +1,94 @@
+.desktopNav {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .desktopNav {
+    display: flex;
+  }
+}
+
+.navLink {
+  font-size: 0.875rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.navLink:hover {
+  color: #F18E24;
+}
+
+.desktopCta {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktopCta {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.lineButton {
+  background-color: #F18E24;
+  color: #ffffff;
+  font-size: 0.875rem;
+  padding: 8px 20px;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+  display: inline-block;
+}
+
+.lineButton:hover {
+  background-color: #D4780F;
+}
+
+.menuButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  gap: 6px;
+}
+
+@media (min-width: 768px) {
+  .menuButton {
+    display: none;
+  }
+}
+
+.hamburgerLine {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #ffffff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.lineTopOpen {
+  transform: rotate(45deg) translateY(6px);
+}
+
+.lineMiddleOpen {
+  opacity: 0;
+}
+
+.lineBottomOpen {
+  transform: rotate(-45deg) translateY(-6px);
+}
+
+.mobileMenu {
+  background-color: #1A1A1A;
+  border-top: 1px solid #404040;
+  padding: 16px 24px;
+}

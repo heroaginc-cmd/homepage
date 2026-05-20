@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { pageMeta } from "@/lib/seo"
+import styles from "./page.module.css"
 
 export const metadata: Metadata = {
   title: pageMeta.services.title,
@@ -14,12 +15,12 @@ const services = [
     sections: [
       {
         heading: "こんな企業におすすめ",
-        items: ["採用に課題を抱えている企業","SNSでの集客を強化したい企業","ブランドイメージを映像で伝えたい企業"],
+        items: ["採用に課題を抱えている企業", "SNSでの集客を強化したい企業", "ブランドイメージを映像で伝えたい企業"],
         ordered: false,
       },
       {
         heading: "制作の流れ",
-        items: ["ヒアリング・企画立案","脚本・絵コンテ作成","撮影・編集","納品・SNS投稿サポート"],
+        items: ["ヒアリング・企画立案", "脚本・絵コンテ作成", "撮影・編集", "納品・SNS投稿サポート"],
         ordered: true,
       },
     ],
@@ -36,13 +37,11 @@ const services = [
     sections: [
       {
         heading: "サービス内容",
-        items: ["ブランドコンセプト設計","SNS戦略・運用設計","LINE公式アカウント設計・配信設計","販売動線の構築"],
+        items: ["ブランドコンセプト設計", "SNS戦略・運用設計", "LINE公式アカウント設計・配信設計", "販売動線の構築"],
         ordered: false,
       },
     ],
-    pricing: [
-      { plan: "3ヶ月コース", price: "¥100,000 / 月（計 ¥300,000）" },
-    ],
+    pricing: [{ plan: "3ヶ月コース", price: "¥100,000 / 月（計 ¥300,000）" }],
   },
   {
     id: "03",
@@ -51,13 +50,11 @@ const services = [
     sections: [
       {
         heading: "制作実績",
-        items: ["ビデオポッドキャスト","商品・サービス紹介映像","インタビュー・事例映像","SNS向けショート映像"],
+        items: ["ビデオポッドキャスト", "商品・サービス紹介映像", "インタビュー・事例映像", "SNS向けショート映像"],
         ordered: false,
       },
     ],
-    pricing: [
-      { plan: "スポット制作", price: "¥150,000〜（内容応相談）" },
-    ],
+    pricing: [{ plan: "スポット制作", price: "¥150,000〜（内容応相談）" }],
   },
   {
     id: "04",
@@ -66,51 +63,56 @@ const services = [
     sections: [
       {
         heading: "支援内容",
-        items: ["AI台本自動生成ツールの導入","SNS投稿コンテンツの自動化","社内業務フローのAI最適化","カスタムAIツール設計・構築"],
+        items: ["AI台本自動生成ツールの導入", "SNS投稿コンテンツの自動化", "社内業務フローのAI最適化", "カスタムAIツール設計・構築"],
         ordered: false,
       },
     ],
-    pricing: [
-      { plan: "スポット / 月額顧問", price: "内容に応じてご相談" },
-    ],
+    pricing: [{ plan: "スポット / 月額顧問", price: "内容に応じてご相談" }],
   },
 ]
 
 export default function ServicesPage() {
   return (
-    <main className="pt-20">
+    <main style={{ paddingTop: "64px" }}>
 
-      <section className="py-24 bg-[#F9F9F9]">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-4">Services</p>
-          <h1 className="text-4xl md:text-6xl font-light text-[#1A1A1A] leading-tight mb-6">提供サービス</h1>
-          <p className="text-base md:text-lg text-[#6B6B6B] max-w-2xl leading-relaxed">
+      {/* Hero */}
+      <section style={{ padding: "96px 24px", backgroundColor: "#F9F9F9" }}>
+        <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
+          <p style={{ fontSize: "0.75rem", letterSpacing: "0.3em", color: "#F18E24", textTransform: "uppercase", marginBottom: "16px" }}>Services</p>
+          <h1 style={{ fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 300, color: "#1A1A1A", lineHeight: 1.25, marginBottom: "24px" }}>提供サービス</h1>
+          <p style={{ fontSize: "clamp(1rem, 2vw, 1.125rem)", color: "#6B6B6B", maxWidth: "42rem", lineHeight: 1.7 }}>
             AIと映像を軸に、事業成長に必要なマーケティング支援を一括で提供します。
           </p>
         </div>
       </section>
 
       {services.map((service, index) => (
-        <section key={service.id} className={`py-24 ${index % 2 === 0 ? "bg-white" : "bg-[#F9F9F9]"}`}>
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+        <section key={service.id} style={{ padding: "96px 24px", backgroundColor: index % 2 === 0 ? "#ffffff" : "#F9F9F9" }}>
+          <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
+            <div className={styles.serviceLayout}>
               <div>
-                <p className="text-xs text-[#F18E24] tracking-widest mb-4">{service.id}</p>
-                <h2 className="text-3xl md:text-4xl font-light text-[#1A1A1A] mb-6">{service.title}</h2>
-                <p className="text-sm text-[#6B6B6B] leading-relaxed mb-8">{service.tagline}</p>
-                <a href="https://lin.ee/vBEfQwi" target="_blank" rel="noopener noreferrer"
-                  className="inline-block bg-[#F18E24] text-white text-sm px-8 py-3 hover:bg-[#D4780F] transition-colors tracking-wider">
+                <p style={{ fontSize: "0.75rem", color: "#F18E24", letterSpacing: "0.1em", marginBottom: "16px" }}>{service.id}</p>
+                <h2 style={{ fontSize: "clamp(1.875rem, 4vw, 2.25rem)", fontWeight: 300, color: "#1A1A1A", marginBottom: "24px" }}>{service.title}</h2>
+                <p style={{ fontSize: "0.875rem", color: "#6B6B6B", lineHeight: 1.7, marginBottom: "32px" }}>{service.tagline}</p>
+                <a
+                  href="https://lin.ee/vBEfQwi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: "inline-block", backgroundColor: "#F18E24", color: "#ffffff", fontSize: "0.875rem", padding: "12px 32px", letterSpacing: "0.05em", textDecoration: "none" }}
+                >
                   LINEで相談する
                 </a>
               </div>
-              <div className="flex flex-col gap-8">
+              <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
                 {service.sections.map((sec) => (
                   <div key={sec.heading}>
-                    <p className="text-xs tracking-widest text-[#6B6B6B] uppercase mb-4">{sec.heading}</p>
-                    <ul className="flex flex-col gap-2">
+                    <p style={{ fontSize: "0.75rem", letterSpacing: "0.1em", color: "#6B6B6B", textTransform: "uppercase", marginBottom: "16px" }}>{sec.heading}</p>
+                    <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
                       {sec.items.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 text-sm text-[#1A1A1A]">
-                          <span className="text-[#F18E24] mt-0.5 shrink-0">{sec.ordered ? `${String(i + 1).padStart(2, "0")}.` : "—"}</span>
+                        <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "0.875rem", color: "#1A1A1A" }}>
+                          <span style={{ color: "#F18E24", marginTop: "2px", flexShrink: 0 }}>
+                            {sec.ordered ? `${String(i + 1).padStart(2, "0")}.` : "—"}
+                          </span>
                           {item}
                         </li>
                       ))}
@@ -118,12 +120,12 @@ export default function ServicesPage() {
                   </div>
                 ))}
                 <div>
-                  <p className="text-xs tracking-widest text-[#6B6B6B] uppercase mb-4">料金</p>
-                  <div className="flex flex-col gap-3">
+                  <p style={{ fontSize: "0.75rem", letterSpacing: "0.1em", color: "#6B6B6B", textTransform: "uppercase", marginBottom: "16px" }}>料金</p>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                     {service.pricing.map((p) => (
-                      <div key={p.plan} className="flex justify-between items-center border-b border-[#E5E5E5] pb-3">
-                        <span className="text-sm text-[#6B6B6B]">{p.plan}</span>
-                        <span className="text-sm font-medium text-[#1A1A1A]">{p.price}</span>
+                      <div key={p.plan} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #E5E5E5", paddingBottom: "12px" }}>
+                        <span style={{ fontSize: "0.875rem", color: "#6B6B6B" }}>{p.plan}</span>
+                        <span style={{ fontSize: "0.875rem", fontWeight: 500, color: "#1A1A1A" }}>{p.price}</span>
                       </div>
                     ))}
                   </div>
@@ -134,15 +136,20 @@ export default function ServicesPage() {
         </section>
       ))}
 
-      <section className="py-24 bg-[#1A1A1A]">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-6">Contact</p>
-          <h2 className="text-3xl md:text-4xl font-light text-white mb-6">まず、話してみませんか。</h2>
-          <p className="text-sm text-[#A3A3A3] mb-12 max-w-lg mx-auto leading-relaxed">
+      {/* CTA */}
+      <section style={{ padding: "96px 24px", backgroundColor: "#1A1A1A" }}>
+        <div style={{ maxWidth: "72rem", margin: "0 auto", textAlign: "center" }}>
+          <p style={{ fontSize: "0.75rem", letterSpacing: "0.3em", color: "#F18E24", textTransform: "uppercase", marginBottom: "24px" }}>Contact</p>
+          <h2 style={{ fontSize: "clamp(1.875rem, 4vw, 2.25rem)", fontWeight: 300, color: "#ffffff", marginBottom: "24px" }}>まず、話してみませんか。</h2>
+          <p style={{ fontSize: "0.875rem", color: "#A3A3A3", maxWidth: "32rem", margin: "0 auto 48px", lineHeight: 1.7 }}>
             どのサービスが合うかわからない場合もお気軽にご相談ください。
           </p>
-          <a href="https://lin.ee/vBEfQwi" target="_blank" rel="noopener noreferrer"
-            className="inline-block bg-[#F18E24] text-white px-10 py-4 text-sm tracking-wider hover:bg-[#D4780F] transition-colors">
+          <a
+            href="https://lin.ee/vBEfQwi"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "inline-block", backgroundColor: "#F18E24", color: "#ffffff", padding: "16px 40px", fontSize: "0.875rem", letterSpacing: "0.05em", textDecoration: "none" }}
+          >
             LINEで無料相談する
           </a>
         </div>

@@ -1,0 +1,12 @@
+.serviceLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .serviceLayout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -27,46 +27,53 @@ const faqs = [
 
 export default function ContactPage() {
   return (
-    <main className="pt-20">
+    <main style={{ paddingTop: "64px" }}>
 
-      <section className="min-h-[50vh] flex items-center bg-[#1A1A1A]">
-        <div className="max-w-6xl mx-auto px-6 py-24">
-          <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-6">Contact</p>
-          <h1 className="text-4xl md:text-6xl font-light text-white leading-tight mb-6">
+      {/* Hero */}
+      <section style={{ minHeight: "50vh", display: "flex", alignItems: "center", backgroundColor: "#1A1A1A" }}>
+        <div style={{ maxWidth: "72rem", margin: "0 auto", padding: "96px 24px" }}>
+          <p style={{ fontSize: "0.75rem", letterSpacing: "0.3em", color: "#F18E24", textTransform: "uppercase", marginBottom: "24px" }}>Contact</p>
+          <h1 style={{ fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 300, color: "#ffffff", lineHeight: 1.25, marginBottom: "24px" }}>
             お問い合わせ
           </h1>
-          <p className="text-base md:text-lg text-[#A3A3A3] max-w-xl leading-relaxed">
+          <p style={{ fontSize: "clamp(1rem, 2vw, 1.125rem)", color: "#A3A3A3", maxWidth: "36rem", lineHeight: 1.7 }}>
             サービスのご相談・お見積もりは、LINEからお気軽にどうぞ。初回相談は無料です。
           </p>
         </div>
       </section>
 
-      <section className="py-24 bg-[#F9F9F9]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-4">LINE</p>
-            <h2 className="text-3xl md:text-4xl font-light text-[#1A1A1A] mb-6">LINEで相談する</h2>
-            <p className="text-sm text-[#6B6B6B] leading-relaxed mb-10">
+      {/* LINE CTA */}
+      <section style={{ padding: "96px 24px", backgroundColor: "#F9F9F9" }}>
+        <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
+          <div style={{ maxWidth: "42rem", margin: "0 auto", textAlign: "center" }}>
+            <p style={{ fontSize: "0.75rem", letterSpacing: "0.3em", color: "#F18E24", textTransform: "uppercase", marginBottom: "16px" }}>LINE</p>
+            <h2 style={{ fontSize: "clamp(1.875rem, 4vw, 2.25rem)", fontWeight: 300, color: "#1A1A1A", marginBottom: "24px" }}>LINEで相談する</h2>
+            <p style={{ fontSize: "0.875rem", color: "#6B6B6B", lineHeight: 1.7, marginBottom: "40px" }}>
               下記のボタンからHERO株式会社の公式LINEを友だち追加してください。
               メッセージを送っていただければ、担当者が丁寧にご返信いたします。
             </p>
-            <a href="https://lin.ee/vBEfQwi" target="_blank" rel="noopener noreferrer"
-              className="inline-block bg-[#F18E24] text-white px-10 py-4 text-sm tracking-wider hover:bg-[#D4780F] transition-colors">
+            <a
+              href="https://lin.ee/vBEfQwi"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: "inline-block", backgroundColor: "#F18E24", color: "#ffffff", padding: "16px 40px", fontSize: "0.875rem", letterSpacing: "0.05em", textDecoration: "none" }}
+            >
               LINEで無料相談する
             </a>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-4">FAQ</p>
-          <h2 className="text-3xl md:text-4xl font-light text-[#1A1A1A] mb-16">よくある質問</h2>
-          <div className="flex flex-col divide-y divide-[#E5E5E5] border-t border-[#E5E5E5]">
+      {/* FAQ */}
+      <section style={{ padding: "96px 24px", backgroundColor: "#ffffff" }}>
+        <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
+          <p style={{ fontSize: "0.75rem", letterSpacing: "0.3em", color: "#F18E24", textTransform: "uppercase", marginBottom: "16px" }}>FAQ</p>
+          <h2 style={{ fontSize: "clamp(1.875rem, 4vw, 2.25rem)", fontWeight: 300, color: "#1A1A1A", marginBottom: "64px" }}>よくある質問</h2>
+          <div style={{ borderTop: "1px solid #E5E5E5" }}>
             {faqs.map(({ q, a }) => (
-              <div key={q} className="py-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <dt className="text-base font-medium text-[#1A1A1A]">{q}</dt>
-                <dd className="text-sm text-[#6B6B6B] leading-relaxed">{a}</dd>
+              <div key={q} style={{ padding: "32px 0", borderBottom: "1px solid #E5E5E5", display: "grid", gridTemplateColumns: "1fr", gap: "24px" }}>
+                <dt style={{ fontSize: "1rem", fontWeight: 500, color: "#1A1A1A" }}>{q}</dt>
+                <dd style={{ fontSize: "0.875rem", color: "#6B6B6B", lineHeight: 1.7 }}>{a}</dd>
               </div>
             ))}
           </div>

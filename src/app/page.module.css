@@ -1,0 +1,49 @@
+.ctaButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .ctaButtons {
+    flex-direction: row;
+  }
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background-color: #E5E5E5;
+}
+
+@media (min-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.serviceCard {
+  background-color: #ffffff;
+  padding: 40px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.15s ease;
+}
+
+.serviceCard:hover {
+  background-color: #F9F9F9;
+}
+
+.serviceCard:hover .serviceTitle {
+  color: #F18E24;
+}
+
+.serviceTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1A1A1A;
+  margin-bottom: 12px;
+  transition: color 0.15s ease;
+}
