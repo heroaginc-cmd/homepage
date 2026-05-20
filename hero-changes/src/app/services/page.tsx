@@ -14,12 +14,20 @@ const services = [
     sections: [
       {
         heading: "こんな企業におすすめ",
-        items: ["採用に課題を抱えている企業","SNSでの集客を強化したい企業","ブランドイメージを映像で伝えたい企業"],
-        ordered: false,
+        items: [
+          "採用に課題を抱えている企業",
+          "SNSでの集客を強化したい企業",
+          "ブランドイメージを映像で伝えたい企業",
+        ],
       },
       {
         heading: "制作の流れ",
-        items: ["ヒアリング・企画立案","脚本・絵コンテ作成","撮影・編集","納品・SNS投稿サポート"],
+        items: [
+          "ヒアリング・企画立案",
+          "脚本・絵コンテ作成",
+          "撮影・編集",
+          "納品・SNS投稿サポート",
+        ],
         ordered: true,
       },
     ],
@@ -36,8 +44,12 @@ const services = [
     sections: [
       {
         heading: "サービス内容",
-        items: ["ブランドコンセプト設計","SNS戦略・運用設計","LINE公式アカウント設計・配信設計","販売動線の構築"],
-        ordered: false,
+        items: [
+          "ブランドコンセプト設計",
+          "SNS戦略・運用設計",
+          "LINE公式アカウント設計・配信設計",
+          "販売動線の構築",
+        ],
       },
     ],
     pricing: [
@@ -51,8 +63,12 @@ const services = [
     sections: [
       {
         heading: "制作実績",
-        items: ["ビデオポッドキャスト","商品・サービス紹介映像","インタビュー・事例映像","SNS向けショート映像"],
-        ordered: false,
+        items: [
+          "ビデオポッドキャスト",
+          "商品・サービス紹介映像",
+          "インタビュー・事例映像",
+          "SNS向けショート映像",
+        ],
       },
     ],
     pricing: [
@@ -66,8 +82,12 @@ const services = [
     sections: [
       {
         heading: "支援内容",
-        items: ["AI台本自動生成ツールの導入","SNS投稿コンテンツの自動化","社内業務フローのAI最適化","カスタムAIツール設計・構築"],
-        ordered: false,
+        items: [
+          "AI台本自動生成ツールの導入",
+          "SNS投稿コンテンツの自動化",
+          "社内業務フローのAI最適化",
+          "カスタムAIツール設計・構築",
+        ],
       },
     ],
     pricing: [
@@ -80,29 +100,42 @@ export default function ServicesPage() {
   return (
     <main className="pt-20">
 
+      {/* Hero */}
       <section className="py-24 bg-[#F9F9F9]">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-4">Services</p>
-          <h1 className="text-4xl md:text-6xl font-light text-[#1A1A1A] leading-tight mb-6">提供サービス</h1>
+          <h1 className="text-4xl md:text-6xl font-light text-[#1A1A1A] leading-tight mb-6">
+            提供サービス
+          </h1>
           <p className="text-base md:text-lg text-[#6B6B6B] max-w-2xl leading-relaxed">
             AIと映像を軸に、事業成長に必要なマーケティング支援を一括で提供します。
           </p>
         </div>
       </section>
 
+      {/* Services */}
       {services.map((service, index) => (
-        <section key={service.id} className={`py-24 ${index % 2 === 0 ? "bg-white" : "bg-[#F9F9F9]"}`}>
+        <section
+          key={service.id}
+          className={`py-24 ${index % 2 === 0 ? "bg-white" : "bg-[#F9F9F9]"}`}
+        >
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+              {/* Left */}
               <div>
                 <p className="text-xs text-[#F18E24] tracking-widest mb-4">{service.id}</p>
                 <h2 className="text-3xl md:text-4xl font-light text-[#1A1A1A] mb-6">{service.title}</h2>
                 <p className="text-sm text-[#6B6B6B] leading-relaxed mb-8">{service.tagline}</p>
-                <a href="https://lin.ee/vBEfQwi" target="_blank" rel="noopener noreferrer"
-                  className="inline-block bg-[#F18E24] text-white text-sm px-8 py-3 hover:bg-[#D4780F] transition-colors tracking-wider">
+                <a
+                  href="https://lin.ee/vBEfQwi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#F18E24] text-white text-sm px-8 py-3 hover:bg-[#D4780F] transition-colors tracking-wider"
+                >
                   LINEで相談する
                 </a>
               </div>
+              {/* Right */}
               <div className="flex flex-col gap-8">
                 {service.sections.map((sec) => (
                   <div key={sec.heading}>
@@ -110,13 +143,16 @@ export default function ServicesPage() {
                     <ul className="flex flex-col gap-2">
                       {sec.items.map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-sm text-[#1A1A1A]">
-                          <span className="text-[#F18E24] mt-0.5 shrink-0">{sec.ordered ? `${String(i + 1).padStart(2, "0")}.` : "—"}</span>
+                          <span className="text-[#F18E24] mt-0.5 shrink-0">
+                            {sec.ordered ? `${String(i + 1).padStart(2, "0")}.` : "—"}
+                          </span>
                           {item}
                         </li>
                       ))}
                     </ul>
                   </div>
                 ))}
+                {/* 料金 */}
                 <div>
                   <p className="text-xs tracking-widest text-[#6B6B6B] uppercase mb-4">料金</p>
                   <div className="flex flex-col gap-3">
@@ -134,6 +170,7 @@ export default function ServicesPage() {
         </section>
       ))}
 
+      {/* CTA */}
       <section className="py-24 bg-[#1A1A1A]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-6">Contact</p>
@@ -141,8 +178,12 @@ export default function ServicesPage() {
           <p className="text-sm text-[#A3A3A3] mb-12 max-w-lg mx-auto leading-relaxed">
             どのサービスが合うかわからない場合もお気軽にご相談ください。
           </p>
-          <a href="https://lin.ee/vBEfQwi" target="_blank" rel="noopener noreferrer"
-            className="inline-block bg-[#F18E24] text-white px-10 py-4 text-sm tracking-wider hover:bg-[#D4780F] transition-colors">
+          <a
+            href="https://lin.ee/vBEfQwi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#F18E24] text-white px-10 py-4 text-sm tracking-wider hover:bg-[#D4780F] transition-colors"
+          >
             LINEで無料相談する
           </a>
         </div>

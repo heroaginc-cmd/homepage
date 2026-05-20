@@ -10,6 +10,7 @@ export default function AboutPage() {
   return (
     <main className="pt-20">
 
+      {/* ミッション Hero */}
       <section className="min-h-[50vh] flex items-center bg-[#1A1A1A]">
         <div className="max-w-6xl mx-auto px-6 py-24">
           <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-6">Mission</p>
@@ -22,11 +23,12 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Value */}
       <section className="py-24 bg-[#F9F9F9]">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-4">Value</p>
           <h2 className="text-3xl md:text-4xl font-light text-[#1A1A1A] mb-16">私たちが大切にすること</h2>
-          <div className="flex flex-col divide-y divide-[#E5E5E5] border-t border-[#E5E5E5]">
+          <ol className="flex flex-col gap-0 divide-y divide-[#E5E5E5]">
             {[
               "顧客の願う成果を共に求め",
               "本質的な価値を追求し",
@@ -39,10 +41,11 @@ export default function AboutPage() {
                 <p className="text-base md:text-lg text-[#1A1A1A]">{item}</p>
               </div>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
+      {/* 会社概要テーブル */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-4">Company</p>
@@ -65,6 +68,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="py-24 bg-[#1A1A1A]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-6">Contact</p>
@@ -72,8 +76,12 @@ export default function AboutPage() {
           <p className="text-sm text-[#A3A3A3] mb-12 max-w-lg mx-auto leading-relaxed">
             初回相談は無料です。どんな段階でもお気軽にどうぞ。
           </p>
-          <a href="https://lin.ee/vBEfQwi" target="_blank" rel="noopener noreferrer"
-            className="inline-block bg-[#F18E24] text-white px-10 py-4 text-sm tracking-wider hover:bg-[#D4780F] transition-colors">
+          <a
+            href="https://lin.ee/vBEfQwi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#F18E24] text-white px-10 py-4 text-sm tracking-wider hover:bg-[#D4780F] transition-colors"
+          >
             LINEで相談する
           </a>
         </div>

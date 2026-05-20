@@ -29,6 +29,7 @@ export default function ContactPage() {
   return (
     <main className="pt-20">
 
+      {/* Hero */}
       <section className="min-h-[50vh] flex items-center bg-[#1A1A1A]">
         <div className="max-w-6xl mx-auto px-6 py-24">
           <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-6">Contact</p>
@@ -41,6 +42,7 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* LINE CTA */}
       <section className="py-24 bg-[#F9F9F9]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center">
@@ -50,14 +52,19 @@ export default function ContactPage() {
               下記のボタンからHERO株式会社の公式LINEを友だち追加してください。
               メッセージを送っていただければ、担当者が丁寧にご返信いたします。
             </p>
-            <a href="https://lin.ee/vBEfQwi" target="_blank" rel="noopener noreferrer"
-              className="inline-block bg-[#F18E24] text-white px-10 py-4 text-sm tracking-wider hover:bg-[#D4780F] transition-colors">
+            <a
+              href="https://lin.ee/vBEfQwi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#F18E24] text-white px-10 py-4 text-sm tracking-wider hover:bg-[#D4780F] transition-colors"
+            >
               LINEで無料相談する
             </a>
           </div>
         </div>
       </section>
 
+      {/* FAQ */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-4">FAQ</p>
