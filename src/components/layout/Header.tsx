@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 import styles from "./Header.module.css"
 
@@ -17,8 +18,15 @@ export default function Header() {
   return (
     <header style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, backgroundColor: "#1A1A1A" }}>
       <nav style={{ maxWidth: "72rem", margin: "0 auto", padding: "0 24px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <Link href="/" style={{ fontWeight: 700, fontSize: "1.25rem", letterSpacing: "0.1em", color: "#ffffff", textDecoration: "none" }}>
-          HERO
+        <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+          <Image
+            src="/logo-white.png"
+            alt="HERO株式会社"
+            width={120}
+            height={21}
+            style={{ display: "block" }}
+            priority
+          />
         </Link>
 
         <ul className={styles.desktopNav}>
