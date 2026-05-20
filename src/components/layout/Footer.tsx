@@ -5,17 +5,10 @@ export default function Footer() {
     <footer className="bg-[#1A1A1A] text-white mt-24">
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-
-          {/* ブランド */}
           <div className="md:col-span-1">
             <p className="text-xl font-bold tracking-widest text-[#F18E24] mb-4">HERO</p>
-            <p className="text-sm text-[#A3A3A3] leading-relaxed">
-              AI×メディアで、<br />
-              事業を次のステージへ。
-            </p>
+            <p className="text-sm text-[#A3A3A3] leading-relaxed">AI×メディアで、<br />事業を次のステージへ。</p>
           </div>
-
-          {/* サービス */}
           <div>
             <p className="text-xs tracking-widest text-[#F18E24] mb-4 uppercase">Services</p>
             <ul className="flex flex-col gap-3">
@@ -25,8 +18,6 @@ export default function Footer() {
               <li><Link href="/drama-generator" className="text-sm text-[#A3A3A3] hover:text-white transition-colors">AI台本生成</Link></li>
             </ul>
           </div>
-
-          {/* 会社情報 */}
           <div>
             <p className="text-xs tracking-widest text-[#F18E24] mb-4 uppercase">Company</p>
             <ul className="flex flex-col gap-3">
@@ -36,8 +27,6 @@ export default function Footer() {
               <li><Link href="/contact" className="text-sm text-[#A3A3A3] hover:text-white transition-colors">お問い合わせ</Link></li>
             </ul>
           </div>
-
-          {/* 法的情報 */}
           <div>
             <p className="text-xs tracking-widest text-[#F18E24] mb-4 uppercase">Legal</p>
             <ul className="flex flex-col gap-3">
@@ -46,16 +35,9 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* コピーライト */}
         <div className="border-t border-[#404040] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-[#6B6B6B]">© {new Date().getFullYear()} HERO株式会社. All rights reserved.</p>
-          
-            href="https://lin.ee/vBEfQwi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-[#F18E24] hover:text-[#FFA94D] transition-colors"
-          >
+          <a href="https://lin.ee/vBEfQwi" target="_blank" rel="noopener noreferrer" className="text-xs text-[#F18E24] hover:text-[#FFA94D] transition-colors">
             LINEで相談する →
           </a>
         </div>
