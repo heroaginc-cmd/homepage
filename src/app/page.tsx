@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="pt-20">
-      <section className="bg-[#F9F9F9]">
-        <div className="max-w-6xl mx-auto px-6 py-24">
+    <main className="pt-16">
+      <section className="bg-[#F9F9F9] px-6 py-24">
+        <div className="max-w-6xl mx-auto">
           <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-6">HERO Inc. / AI x Media</p>
           <h1 className="text-4xl md:text-6xl font-light text-[#1A1A1A] leading-tight mb-8">
             AI x メディアで、<br />
@@ -30,8 +30,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="bg-white px-6 py-24">
+        <div className="max-w-6xl mx-auto">
           <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-4">Services</p>
           <h2 className="text-3xl md:text-4xl font-light text-[#1A1A1A] mb-16">提供サービス</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E5E5E5]">
@@ -58,8 +58,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="py-24 bg-[#1A1A1A]">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      <section className="bg-[#1A1A1A] px-6 py-24">
+        <div className="max-w-6xl mx-auto text-center">
           <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-6">Contact</p>
           <h2 className="text-3xl md:text-4xl font-light text-white mb-6">まず、話してみませんか。</h2>
           <p className="text-sm text-[#A3A3A3] mb-12 max-w-lg mx-auto leading-relaxed">課題やアイデアをお気軽にLINEでご相談ください。初回相談は無料です。</p>
