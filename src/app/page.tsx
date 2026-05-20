@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main className="pt-20">
-      <section className="min-h-screen flex items-center bg-[#F9F9F9]">
+      <section className="bg-[#F9F9F9]">
         <div className="max-w-6xl mx-auto px-6 py-24">
           <p className="text-xs tracking-[0.3em] text-[#F18E24] uppercase mb-6">HERO Inc. / AI x Media</p>
           <h1 className="text-4xl md:text-6xl font-light text-[#1A1A1A] leading-tight mb-8">
