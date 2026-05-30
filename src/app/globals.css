@@ -27,9 +27,16 @@ html {
 
 body {
   color: #1A1A1A;
-  background: #FFFFFF;
+  background: #1A1A1A;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 a {
