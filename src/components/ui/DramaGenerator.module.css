@@ -444,25 +444,74 @@
   flex: 1;
 }
 
-.ctaRow {
+.lockedSection {
+  position: relative;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.lockOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(
+    to bottom,
+    rgba(249, 249, 249, 0) 0%,
+    rgba(26, 26, 26, 0.55) 35%,
+    rgba(26, 26, 26, 0.85) 100%
+  );
+}
+
+.lockCard {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
-  margin-top: 40px;
-  padding-top: 32px;
-  border-top: 1px solid #E5E5E5;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  max-width: 28rem;
+  padding: 32px 28px;
+  background-color: #1A1A1A;
+  border: 1px solid #F18E24;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6);
 }
 
-@media (min-width: 640px) {
-  .ctaRow {
-    flex-direction: row;
-    align-items: center;
-  }
+.lockEyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #F18E24;
 }
 
-.ctaNote {
-  font-size: 0.75rem;
-  color: #6B6B6B;
+.lockText {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.lockSubtext {
+  font-size: 0.8125rem;
+  color: #A3A3A3;
   line-height: 1.7;
+  margin: 0;
+}
+
+.lockButton {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 14px 32px;
+  background-color: #F18E24;
+  color: #ffffff;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.lockButton:hover {
+  background-color: #D4780F;
 }

@@ -399,50 +399,84 @@ function ScriptResult({ script }: { script: Script }) {
         </div>
       )}
 
-      <ol className={styles.sceneList}>
-        {script.scenes?.map((scene) => (
-          <li key={scene.scene_number} className={styles.scene}>
-            <div className={styles.sceneHeader}>
-              <span className={styles.sceneNum}>SCENE {scene.scene_number}</span>
+      <SceneList scenes={script.scenes ?? []} />
+    </div>
+  )
+}
+
+function SceneCard({ scene }: { scene: Scene }) {
+  return (
+    <li className={styles.scene}>
+      <div className={styles.sceneHeader}>
+        <span className={styles.sceneNum}>SCENE {scene.scene_number}</span>
+      </div>
+      {scene.direction && <p className={styles.direction}>{scene.direction}</p>}
+      {scene.lines?.length > 0 && (
+        <div className={styles.lines}>
+          {scene.lines.map((line, i) => (
+            <div key={i} className={styles.line}>
+              <span className={styles.lineChar}>{line.character}</span>
+              <span className={styles.lineDialogue}>{line.dialogue}</span>
             </div>
-            {scene.direction && (
-              <p className={styles.direction}>{scene.direction}</p>
-            )}
-            {scene.lines?.length > 0 && (
-              <div className={styles.lines}>
-                {scene.lines.map((line, i) => (
-                  <div key={i} className={styles.line}>
-                    <span className={styles.lineChar}>{line.character}</span>
-                    <span className={styles.lineDialogue}>{line.dialogue}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </li>
+          ))}
+        </div>
+      )}
+    </li>
+  )
+}
+
+function SceneList({ scenes }: { scenes: Scene[] }) {
+  if (scenes.length === 0) return null
+  const visibleCount = Math.max(1, Math.floor(scenes.length / 3))
+  const visible = scenes.slice(0, visibleCount)
+  const locked = scenes.slice(visibleCount)
+
+  return (
+    <>
+      <ol className={styles.sceneList}>
+        {visible.map((scene) => (
+          <SceneCard key={scene.scene_number} scene={scene} />
         ))}
       </ol>
 
-      <div className={styles.ctaRow}>
-        <a
-          href="https://lin.ee/vBEfQwi"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "inline-block",
-            backgroundColor: "#F18E24",
-            color: "#ffffff",
-            padding: "14px 32px",
-            fontSize: "0.875rem",
-            letterSpacing: "0.05em",
-            textDecoration: "none",
-          }}
-        >
-          この台本について相談する（LINE）
-        </a>
-        <p className={styles.ctaNote}>
-          プロによる脚本・撮影・編集もお気軽にご相談ください。
-        </p>
-      </div>
-    </div>
+      {locked.length > 0 && (
+        <div className={styles.lockedSection} aria-label="続きはLINEで受け取れます">
+          <ol
+            className={styles.sceneList}
+            aria-hidden
+            tabIndex={-1}
+            style={{
+              filter: "blur(8px)",
+              pointerEvents: "none",
+              userSelect: "none",
+              marginTop: "20px",
+            }}
+          >
+            {locked.map((scene) => (
+              <SceneCard key={scene.scene_number} scene={scene} />
+            ))}
+          </ol>
+          <div className={styles.lockOverlay}>
+            <div className={styles.lockCard}>
+              <p className={styles.lockEyebrow}>Locked</p>
+              <p className={styles.lockText}>
+                この続きはLINEで受け取れます
+              </p>
+              <p className={styles.lockSubtext}>
+                友だち追加後、生成された台本のフルバージョンをお送りします。
+              </p>
+              <a
+                href="https://lin.ee/vBEfQwi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.lockButton}
+              >
+                LINEで台本を受け取る
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
