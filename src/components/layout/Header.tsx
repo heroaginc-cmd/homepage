@@ -13,7 +13,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, backgroundColor: "#1A1A1A" }}>
+    <header style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, backgroundColor: "rgba(10, 15, 30, 0.85)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)", borderBottom: "1px solid #2A3354" }}>
       <nav style={{ maxWidth: "72rem", margin: "0 auto", padding: "0 24px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <Link href="/" style={{ fontWeight: 700, fontSize: "1.25rem", letterSpacing: "0.1em", color: "#ffffff", textDecoration: "none" }}>
           HERO
@@ -55,7 +55,7 @@ export default function Header() {
                 href="https://lin.ee/vBEfQwi"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ display: "block", backgroundColor: "#F18E24", color: "#ffffff", fontSize: "0.875rem", padding: "8px 20px", textAlign: "center", textDecoration: "none" }}
+                style={{ display: "block", background: "linear-gradient(135deg, #FFD200 0%, #FF3A7A 100%)", color: "#0A0F1E", fontSize: "0.875rem", fontWeight: 600, padding: "10px 20px", textAlign: "center", textDecoration: "none", borderRadius: "9999px" }}
                 onClick={() => setIsOpen(false)}
               >
                 LINEで相談する

@@ -76,29 +76,29 @@ export default function ServicesPage() {
     <main style={{ paddingTop: "64px" }}>
 
       {/* Hero */}
-      <section style={{ padding: "96px 24px", backgroundColor: "#F9F9F9" }}>
+      <section style={{ padding: "96px 24px", backgroundColor: "#131A2E" }}>
         <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
-          <p style={{ fontSize: "0.75rem", letterSpacing: "0.3em", color: "#F18E24", textTransform: "uppercase", marginBottom: "16px" }}>Services</p>
-          <h1 style={{ fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 300, color: "#1A1A1A", lineHeight: 1.25, marginBottom: "24px" }}>提供サービス</h1>
-          <p style={{ fontSize: "clamp(1rem, 2vw, 1.125rem)", color: "#6B6B6B", maxWidth: "42rem", lineHeight: 1.7 }}>
+          <p style={{ fontSize: "0.75rem", letterSpacing: "0.3em", color: "#FFD200", textTransform: "uppercase", marginBottom: "16px" }}>Services</p>
+          <h1 style={{ fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 300, color: "#FFFFFF", lineHeight: 1.25, marginBottom: "24px" }}>提供サービス</h1>
+          <p style={{ fontSize: "clamp(1rem, 2vw, 1.125rem)", color: "#B5BBCC", maxWidth: "42rem", lineHeight: 1.7 }}>
             AIと映像を軸に、事業成長に必要なマーケティング支援を一括で提供します。
           </p>
         </div>
       </section>
 
       {services.map((service, index) => (
-        <section key={service.id} style={{ padding: "96px 24px", backgroundColor: index % 2 === 0 ? "#ffffff" : "#F9F9F9" }}>
+        <section key={service.id} style={{ padding: "96px 24px", backgroundColor: index % 2 === 0 ? "#0A0F1E" : "#131A2E" }}>
           <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
             <div className={styles.serviceLayout}>
               <div>
-                <p style={{ fontSize: "0.75rem", color: "#F18E24", letterSpacing: "0.1em", marginBottom: "16px" }}>{service.id}</p>
-                <h2 style={{ fontSize: "clamp(1.875rem, 4vw, 2.25rem)", fontWeight: 300, color: "#1A1A1A", marginBottom: "24px" }}>{service.title}</h2>
-                <p style={{ fontSize: "0.875rem", color: "#6B6B6B", lineHeight: 1.7, marginBottom: "32px" }}>{service.tagline}</p>
+                <p style={{ fontSize: "0.75rem", color: "#FFD200", letterSpacing: "0.1em", marginBottom: "16px" }}>{service.id}</p>
+                <h2 style={{ fontSize: "clamp(1.875rem, 4vw, 2.25rem)", fontWeight: 300, color: "#FFFFFF", marginBottom: "24px" }}>{service.title}</h2>
+                <p style={{ fontSize: "0.875rem", color: "#B5BBCC", lineHeight: 1.7, marginBottom: "32px" }}>{service.tagline}</p>
                 <a
                   href="https://lin.ee/vBEfQwi"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ display: "inline-block", backgroundColor: "#F18E24", color: "#ffffff", fontSize: "0.875rem", padding: "12px 32px", letterSpacing: "0.05em", textDecoration: "none" }}
+                  style={{ display: "inline-block", background: "linear-gradient(135deg, #FFD200 0%, #FF3A7A 100%)", color: "#0A0F1E", fontSize: "0.875rem", fontWeight: 600, padding: "12px 28px", letterSpacing: "0.02em", textDecoration: "none", borderRadius: "9999px" }}
                 >
                   LINEで相談する
                 </a>
@@ -106,11 +106,11 @@ export default function ServicesPage() {
               <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
                 {service.sections.map((sec) => (
                   <div key={sec.heading}>
-                    <p style={{ fontSize: "0.75rem", letterSpacing: "0.1em", color: "#6B6B6B", textTransform: "uppercase", marginBottom: "16px" }}>{sec.heading}</p>
+                    <p style={{ fontSize: "0.75rem", letterSpacing: "0.1em", color: "#B5BBCC", textTransform: "uppercase", marginBottom: "16px" }}>{sec.heading}</p>
                     <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
                       {sec.items.map((item, i) => (
-                        <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "0.875rem", color: "#1A1A1A" }}>
-                          <span style={{ color: "#F18E24", marginTop: "2px", flexShrink: 0 }}>
+                        <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "0.875rem", color: "#FFFFFF" }}>
+                          <span style={{ color: "#FFD200", marginTop: "2px", flexShrink: 0 }}>
                             {sec.ordered ? `${String(i + 1).padStart(2, "0")}.` : "—"}
                           </span>
                           {item}
@@ -120,12 +120,12 @@ export default function ServicesPage() {
                   </div>
                 ))}
                 <div>
-                  <p style={{ fontSize: "0.75rem", letterSpacing: "0.1em", color: "#6B6B6B", textTransform: "uppercase", marginBottom: "16px" }}>料金</p>
+                  <p style={{ fontSize: "0.75rem", letterSpacing: "0.1em", color: "#B5BBCC", textTransform: "uppercase", marginBottom: "16px" }}>料金</p>
                   <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                     {service.pricing.map((p) => (
-                      <div key={p.plan} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #E5E5E5", paddingBottom: "12px" }}>
-                        <span style={{ fontSize: "0.875rem", color: "#6B6B6B" }}>{p.plan}</span>
-                        <span style={{ fontSize: "0.875rem", fontWeight: 500, color: "#1A1A1A" }}>{p.price}</span>
+                      <div key={p.plan} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #2A3354", paddingBottom: "12px" }}>
+                        <span style={{ fontSize: "0.875rem", color: "#B5BBCC" }}>{p.plan}</span>
+                        <span style={{ fontSize: "0.875rem", fontWeight: 500, color: "#FFFFFF" }}>{p.price}</span>
                       </div>
                     ))}
                   </div>
@@ -137,18 +137,18 @@ export default function ServicesPage() {
       ))}
 
       {/* CTA */}
-      <section style={{ padding: "96px 24px", backgroundColor: "#1A1A1A" }}>
+      <section style={{ padding: "96px 24px", backgroundColor: "#0A0F1E" }}>
         <div style={{ maxWidth: "72rem", margin: "0 auto", textAlign: "center" }}>
-          <p style={{ fontSize: "0.75rem", letterSpacing: "0.3em", color: "#F18E24", textTransform: "uppercase", marginBottom: "24px" }}>Contact</p>
+          <p style={{ fontSize: "0.75rem", letterSpacing: "0.3em", color: "#FFD200", textTransform: "uppercase", marginBottom: "24px" }}>Contact</p>
           <h2 style={{ fontSize: "clamp(1.875rem, 4vw, 2.25rem)", fontWeight: 300, color: "#ffffff", marginBottom: "24px" }}>まず、話してみませんか。</h2>
-          <p style={{ fontSize: "0.875rem", color: "#A3A3A3", maxWidth: "32rem", margin: "0 auto 48px", lineHeight: 1.7 }}>
+          <p style={{ fontSize: "0.875rem", color: "#B5BBCC", maxWidth: "32rem", margin: "0 auto 48px", lineHeight: 1.7 }}>
             どのサービスが合うかわからない場合もお気軽にご相談ください。
           </p>
           <a
             href="https://lin.ee/vBEfQwi"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ display: "inline-block", backgroundColor: "#F18E24", color: "#ffffff", padding: "16px 40px", fontSize: "0.875rem", letterSpacing: "0.05em", textDecoration: "none" }}
+            style={{ display: "inline-block", background: "linear-gradient(135deg, #FFD200 0%, #FF3A7A 100%)", color: "#0A0F1E", padding: "16px 40px", fontSize: "0.9375rem", fontWeight: 600, letterSpacing: "0.02em", textDecoration: "none", borderRadius: "9999px" }}
           >
             LINEで無料相談する
           </a>
